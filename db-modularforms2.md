@@ -1,18 +1,71 @@
 # Database modularforms2
 
-Status:
+Status: Released
 
-Contact/Maintainer:
+Contact/Maintainer: Stephan Ehlen, Fredrik Strömberg
 
-Description:
+Description: Elliptic modular forms for Gamma0(N) and Gamma1(N)
 
 Todo:
 * ...
 
+## Collections that are in use right now
+Remark: The collections with name XXX.chunks are used by gridfs, are not documented here seperatedlyand should never be accessed directly
 
-## Collection WebNewforms.chunks
+
+
+### Collection webnewforms
 * Field 1: ...
 * Field 2: ...
+
+### Collection webmodformspace
+* Field 1: ...
+* Field 2: ...
+
+### Collection dimension_table
+This collection contains two types of records.
+The first type is for a space of modular forms for Gamma_1(N) and has the following fields:
+* level: the level
+* weight: the weight
+* d_eis: The dimension of the space of Eisenstein series E_k(Gamma_1(N))
+* d_mod: The dimension of the space of all modular forms M_k(Gamma_1(N))
+* d_newf: The dimension of the space of all cuspidal newforms in S_k(Gamma_1(N))
+* gamma1_label: A label for the space, of the form level.weight
+* all_in_db: True if the spaces S_k^{new}(N,chi) for all chi are in the db, False otherwise
+* one_in_db: True if at least one of these spaces is in the db
+
+The second type of record is for a space with a specified character and has the following fields
+ u'cchi': 9,
+ u'character_orbit': [9, 11],
+ u'character_orbit_rep': 9,
+ u'character_parity': 1,
+ u'd_cusp': 24,
+ u'd_eis': 4,
+ u'd_mod': 28,
+ u'd_newf': 8,
+ u'in_msdb': 1,
+ u'in_wdb': 1,
+ u'level': 14,
+ u'space_label': u'14.14.9',
+ u'space_orbit_label': u'14.14.2',
+ u'weight': 14}
+* level: The level (N)
+* weight The weight (k)
+* cchi: The character number (Conrey naming scheme)
+* space_label: level.weight.cchi
+* space_orbit_label: level.weight.i, where i is the index of the Galois orbit of the character in the list of Galois orbits of characters of this level. The Galois orbits are ordered by the minimal number appearing in the orbit.
+* character_orbit: The (Conrey) numbers of all characters in the Galois orbit
+* character_orbit_rep: A representative for the orbit - this is the minimal number appearing in character_orbit
+* character_parity: 1 if the character is even, -1 if it is odd
+* d_cusp: The dimension of the space of cusp forms S_k(N, chi), where N is the level, chi is the character specified by cchi.
+* d_eis: The dimension of the space of Eisenstein series E_k(N,chi)
+* d_newf: The dimension of the space of (cuspidal) newforms in S_k(N,chi)
+* in_msdb: 1 if we have this space in the modular symbols database, which stores sage modular symbols spaces, else 0
+* in_wdb: 1 if we have this space in the web database, i.e. an entry exists in the collection webmodformspace and all galois orbits of newforms are stored in the collection webnewforms
+
+#### Indexes
+
+## Collections that seem not to be used
 
 ## Collection WebNewforms.files
 * Field 1: ...
@@ -70,15 +123,7 @@ Todo:
 * Field 1: ...
 * Field 2: ...
 
-## Collection webmodformspace
-* Field 1: ...
-* Field 2: ...
-
 ## Collection webeigenvalues.files
-* Field 1: ...
-* Field 2: ...
-
-## Collection webnewforms
 * Field 1: ...
 * Field 2: ...
 
