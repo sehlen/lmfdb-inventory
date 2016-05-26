@@ -53,11 +53,11 @@ The second type of record is for a space with a specified character.
 
 #### Indexes
 
-* [(u'_id', 1)] (created by mongo)
-* [(u'level', 1), (u'weight', 1)] (used to display the browse table)
-* [(u'weight', 1)] (used to search by weight)
-* [(u'level', 1)] (used to search by level)
-* [(u'level', 1), (u'weight', 1), (u'character_orbit_rep', 1)] (this is a sparse index because character_orbit_rep is not existent for all records and it is also unique. This is used to make sure that this combination is unique as we only store one record for each Galois orbit as of now and there have been duplicates in the past leading to problems.)
+* (u'_id', 1) (created by mongo)
+* (u'level', 1), (u'weight', 1) (used to display the browse table)
+* (u'weight', 1) (used to search by weight)
+* (u'level', 1) (used to search by level)
+* (u'level', 1), (u'weight', 1), (u'character_orbit_rep', 1) (this is a sparse index because character_orbit_rep is not existent for all records and it is also unique. This is used to make sure that this combination is unique as we only store one record for each Galois orbit as of now and there have been duplicates in the past leading to problems.)
 
 ### Collection Modular_symbols.files
 * Field 1: ...
