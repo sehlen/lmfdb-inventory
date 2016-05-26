@@ -24,7 +24,8 @@ Remark: The collections with name XXX.chunks are used by gridfs, are not documen
 
 ### Collection dimension_table
 This collection contains two types of records.
-The first type is for a space of modular forms for Gamma_1(N) and has the following fields:
+The first type is for a space of modular forms for Gamma_1(N).
+#### Gamma1: Fields
 * level: the level
 * weight: the weight
 * d_eis: The dimension of the space of Eisenstein series E_k(Gamma_1(N))
@@ -34,21 +35,8 @@ The first type is for a space of modular forms for Gamma_1(N) and has the follow
 * all_in_db: True if the spaces S_k^{new}(N,chi) for all chi are in the db, False otherwise
 * one_in_db: True if at least one of these spaces is in the db
 
-The second type of record is for a space with a specified character and has the following fields
- u'cchi': 9,
- u'character_orbit': [9, 11],
- u'character_orbit_rep': 9,
- u'character_parity': 1,
- u'd_cusp': 24,
- u'd_eis': 4,
- u'd_mod': 28,
- u'd_newf': 8,
- u'in_msdb': 1,
- u'in_wdb': 1,
- u'level': 14,
- u'space_label': u'14.14.9',
- u'space_orbit_label': u'14.14.2',
- u'weight': 14}
+The second type of record is for a space with a specified character.
+#### Gamma0 with character: Fields
 * level: The level (N)
 * weight The weight (k)
 * cchi: The character number (Conrey naming scheme)
